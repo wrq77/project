@@ -29,7 +29,7 @@ public class Test {
 					while ((line = br.readLine()) != null) {
 						g.addStop(line);
 					}
-					g.printStopnode();	
+//					g.printStopnode();	
 				} catch (IOException e) {
 					e.printStackTrace();
 				}finally {

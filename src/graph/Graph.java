@@ -6,11 +6,11 @@ import java.util.*;
 
 public class Graph {
     //站点name为key值，站点
-    public HashMap<String, Stops> myStops = new HashMap<String, Stops>();
+    private HashMap<String, Stops> myStops = new HashMap<String, Stops>();
     //站点id为key值，站点name
     private HashMap<String, String> findStopsById = new HashMap<String, String>();
     //站点name为key
-    public HashMap<String, List<Edges>> myGraph = new HashMap<String, List<Edges>>();
+    private HashMap<String, List<Edges>> myGraph = new HashMap<String, List<Edges>>();
 
     public Graph(){
 
@@ -33,20 +33,20 @@ public class Graph {
             myGraph.get(findStopsById.get(stopsOfRoute[i+1])).add(edge2);
         }
     }
-  //打印点
-    public void printStopnode() {
-    	System.out.println("The number of stops: "+findStopsById.size());
-    	for (String key : findStopsById.keySet()) {
-            System.out.println(key+": "+findStopsById.get(key));          
-         }
-    }
+
+//    public void printStopnode() {
+//    	System.out.println("The number of stops: "+findStopsById.size());
+//    	for (String key : findStopsById.keySet()) {
+//            System.out.println(key+": "+findStopsById.get(key));          
+//         }
+//    }
     
+    //print graph
     public void printRoutes() {
     	for (String key : myGraph.keySet()) {
           System.out.print(key+": ");
-
           for (Edges e : myGraph.get(key)){
-              System.out.print(e.dst.stopName + ", ");
+              System.out.print(e.getdst().getstopName() + " ");
           }
           System.out.println();
        }
