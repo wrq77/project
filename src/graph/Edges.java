@@ -1,16 +1,24 @@
 package graph;
 
 public class Edges {
-    public String routeId;
-    public Stops src;
-    public Stops dst;
-    public double distance;
+    private String routeId;
+    private Stops src;
+    private Stops dst;
+    private double distance;
 
     Edges(String routeId, Stops src, Stops dst){
         this.routeId = routeId;
         this.src = src;
         this.dst = dst;
-        this.distance =  Math.sqrt((src.stopLat - dst.stopLat)*(src.stopLat - dst.stopLat) + (src.stopLon - dst.stopLon)*(src.stopLon - dst.stopLon));
+        this.distance =  Math.sqrt((src.getstopLat() - dst.getstopLat())*(src.getstopLat() - dst.getstopLat()) + (src.getstopLon() - dst.getstopLon())*(src.getstopLon() - dst.getstopLon()));
+    }
+    
+    public Stops getsrc() {
+        return src;
+    }
+    
+    public Stops getdst() {
+        return dst;
     }
 
 }
