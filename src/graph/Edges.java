@@ -1,3 +1,5 @@
+package graph;
+
 public class Edges {
     public String routeId;
     public Stops src;
