@@ -41,9 +41,14 @@ public class Graph {
          }
     }
     
-//    public void printRoutes() {
-//    	for (String key : myGraph.keySet()) {
-//          System.out.println(key+": "+myGraph.get(key).toString());          
-//       }
-//    }
+    public void printRoutes() {
+    	for (String key : myGraph.keySet()) {
+          System.out.print(key+": ");
+
+          for (Edges e : myGraph.get(key)){
+              System.out.print(e.dst.stopName + ", ");
+          }
+          System.out.println();
+       }
+    }
 }

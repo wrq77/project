@@ -14,6 +14,7 @@ public class Test {
 		
 		readStop(g);
 		readRoute(g);
+
 		
 
 	}
@@ -54,7 +55,7 @@ public class Test {
 				while ((line = br.readLine()) != null) {
 					g.addRoute(line);
 				}
-//				g.printRoutes();
+				g.printRoutes();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}finally {
