@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import graph.Graph;
+import pathAlgo.BFS;
 
 public class Test {
 
@@ -15,7 +16,7 @@ public class Test {
 		readStop(g);
 		readRoute(g);
 
-		
+		System.out.println(BFS.bfs(g, "Promontori/Capo Spartivento"));
 
 	}
 	
@@ -55,7 +56,7 @@ public class Test {
 				while ((line = br.readLine()) != null) {
 					g.addRoute(line);
 				}
-				g.printGraph();
+				//g.printGraph();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}finally {
