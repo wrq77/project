@@ -55,7 +55,7 @@ public class Test {
 				while ((line = br.readLine()) != null) {
 					g.addRoute(line);
 				}
-				g.printRoutes();
+				g.printGraph();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}finally {

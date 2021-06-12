@@ -13,11 +13,11 @@ public class Edges {
         this.distance =  Math.sqrt((src.getstopLat() - dst.getstopLat())*(src.getstopLat() - dst.getstopLat()) + (src.getstopLon() - dst.getstopLon())*(src.getstopLon() - dst.getstopLon()));
     }
     
-    public Stops getsrc() {
+    public Stops getSrc() {
         return src;
     }
     
-    public Stops getdst() {
+    public Stops getDst() {
         return dst;
     }
 
