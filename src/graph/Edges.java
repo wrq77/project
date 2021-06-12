@@ -20,5 +20,13 @@ public class Edges {
     public Stops getDst() {
         return dst;
     }
+    
+    public String getrouteId() {
+        return routeId;
+    }
+    
+    public double getdistance() {
+    	return distance;
+    }
 
 }
