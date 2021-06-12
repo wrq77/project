@@ -20,16 +20,16 @@ public class Graph {
         String[] stopInfo = line.split(",");
         myStops.put(stopInfo[1], new Stops(stopInfo[0], stopInfo[1], Double.valueOf(stopInfo[2]), Double.valueOf(stopInfo[3])));
         findStopsById.put(stopInfo[0], stopInfo[1]);
-    }
-
-    public void createGraphStops(){
-
+        myGraph.put(stopInfo[1], new ArrayList<>());
     }
 
     public void addRoute(String route){
         String[] stopsOfRoute = route.split(",");
         for(int i = 1; i < stopsOfRoute.length-2; i++){
-//            myGraph
+            Edges edge = new Edges(stopsOfRoute[0],myStops.get(findStopsById.get(stopsOfRoute[i])),myStops.get(findStopsById.get(stopsOfRoute[i+1])));
+            Edges edge2 = new Edges(stopsOfRoute[0],myStops.get(findStopsById.get(stopsOfRoute[i+1])),myStops.get(findStopsById.get(stopsOfRoute[i])));
+            myGraph.get(findStopsById.get(stopsOfRoute[i])).add(edge);
+            myGraph.get(findStopsById.get(stopsOfRoute[i+1])).add(edge2);
         }
     }
 }
