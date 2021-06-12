@@ -12,6 +12,13 @@ public class Stops {
         this.stopLat = stopLat;
         this.stopLon = stopLon;
     }
+
+    Stops(String stopId, String stopName){
+        this.stopId = stopId;
+        this.stopName = stopName;
+        this.stopLat = 0;
+        this.stopLon = 0;
+    }
     
     public String getstopId() {
     	return stopId;

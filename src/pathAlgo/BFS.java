@@ -47,7 +47,10 @@ public class BFS {
     }
 
     //计算通量
-    public static int cc(Graph G,String source) {
+    public static int cc(Graph G) {
+        for (Stops s : G.getMyStops().values()){
+            String source = s.getstopName();
+        }
         int count = 0;
         for(String s : G.getMyStops().keySet()){
             marked.put(s, false);
