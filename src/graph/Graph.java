@@ -11,6 +11,7 @@ public class Graph {
     private HashMap<String, String> findStopsById = new HashMap<String, String>();
     //站点name为key
     public HashMap<String, List<Edges>> myGraph = new HashMap<String, List<Edges>>();
+
     Graph(){
 
     }
@@ -25,7 +26,7 @@ public class Graph {
 
     public void addRoute(String route){
         String[] stopsOfRoute = route.split(",");
-        for(int i = 1; i < stopsOfRoute.length-2; i++){
+        for(int i = 1; i < stopsOfRoute.length-1; i++){
             Edges edge = new Edges(stopsOfRoute[0],myStops.get(findStopsById.get(stopsOfRoute[i])),myStops.get(findStopsById.get(stopsOfRoute[i+1])));
             Edges edge2 = new Edges(stopsOfRoute[0],myStops.get(findStopsById.get(stopsOfRoute[i+1])),myStops.get(findStopsById.get(stopsOfRoute[i])));
             myGraph.get(findStopsById.get(stopsOfRoute[i])).add(edge);
