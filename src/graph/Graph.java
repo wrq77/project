@@ -42,13 +42,25 @@ public class Graph {
 //    }
     
     //print graph
-    public void printRoutes() {
+    public void printGraph() {
     	for (String key : myGraph.keySet()) {
           System.out.print(key+": ");
           for (Edges e : myGraph.get(key)){
-              System.out.print(e.getdst().getstopName() + " ");
+              System.out.print(e.getDst().getstopName() + " ");
           }
           System.out.println();
        }
+    }
+
+    public HashMap<String, Stops> getMyStops(){
+        return this.myStops;
+    }
+
+    public HashMap<String, List<Edges>> getMyGraph() {
+        return myGraph;
+    }
+
+    public HashMap<String, String> getFindStopsById() {
+        return findStopsById;
     }
 }
