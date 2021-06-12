@@ -12,7 +12,7 @@ public class Graph {
     //站点name为key
     public HashMap<String, List<Edges>> myGraph = new HashMap<String, List<Edges>>();
 
-    Graph(){
+    public Graph(){
 
     }
 
@@ -33,4 +33,17 @@ public class Graph {
             myGraph.get(findStopsById.get(stopsOfRoute[i+1])).add(edge2);
         }
     }
+  //打印点
+    public void printStopnode() {
+    	System.out.println("The number of stops: "+findStopsById.size());
+    	for (String key : findStopsById.keySet()) {
+            System.out.println(key+": "+findStopsById.get(key));          
+         }
+    }
+    
+//    public void printRoutes() {
+//    	for (String key : myGraph.keySet()) {
+//          System.out.println(key+": "+myGraph.get(key).toString());          
+//       }
+//    }
 }
