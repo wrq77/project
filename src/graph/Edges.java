@@ -10,7 +10,12 @@ public class Edges {
         this.routeId = routeId;
         this.src = src;
         this.dst = dst;
-        this.distance =  Math.sqrt((src.getstopLat() - dst.getstopLat())*(src.getstopLat() - dst.getstopLat()) + (src.getstopLon() - dst.getstopLon())*(src.getstopLon() - dst.getstopLon()));
+        //如果坐标是(0,0), 设置距离是1
+        if(src.getstopLat()==0 && dst.getstopLat()==0){
+            distance = 1;
+        }else{
+            this.distance =  Math.sqrt((src.getstopLat() - dst.getstopLat())*(src.getstopLat() - dst.getstopLat()) + (src.getstopLon() - dst.getstopLon())*(src.getstopLon() - dst.getstopLon()));
+        }
     }
     
     public Stops getSrc() {

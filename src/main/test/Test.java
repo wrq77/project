@@ -16,24 +16,26 @@ public class Test {
 //		readStop(g);
 //		readRoute(g);
 
-//		g.addStop("1,a,0,0");
-//		g.addStop("2,b,0,0");
-//		g.addStop("3,c,0,0");
-//		g.addStop("4,d,0,0");
-//		g.addStop("5,e,0,0");
-//		g.addStop("6,f,0,0");
-//		g.addStop("7,g,0,0");
-//		g.addStop("8,h,0,0");
-//
-//		g.addRoute("r1,1,2,3,4,1");
-//		g.addRoute("r2,2,4");
-//		g.addRoute("r3,1,3");
-//		g.addRoute("r4,4,5,6,7,8,5");
-//		g.addRoute("r5,6,8");
+		g.addStop("1,a,0,0");
+		g.addStop("2,b,0,0");
+		g.addStop("3,c,0,0");
+		g.addStop("4,d,0,0");
+		g.addStop("5,e,0,0");
+		g.addStop("6,f,0,0");
+		g.addStop("7,g,0,0");
+		g.addStop("8,h,0,0");
 
-		System.out.println(BFS.cc(g));
+		g.addRoute("r1,1,2,3,4,1");
+		g.addRoute("r2,2,4");
+		g.addRoute("r3,1,3");
+		g.addRoute("r4,4,5,6,7,8,5");
+		g.addRoute("r5,6,8");
+
+
 		Clustering cluster = new Clustering(g);
-		cluster.deleteEdge();
+		cluster.reachMaxClusters(4);
+//		cluster.deleteEdge();
+
 
 //		Dijkstra d = new Dijkstra();
 //		d.DijkstraSP(g, "Laurentina");
