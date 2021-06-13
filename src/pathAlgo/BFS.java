@@ -68,6 +68,10 @@ public class BFS {
     
   //get the shortest path to v
   	public static ArrayList<String> getSP(String v) {
+        if(!hasPathTo(v)){
+            System.out.println("there is no path to stop " + v);
+            return null;
+        }
   		ArrayList<String> shortestPath = new ArrayList<>();
   		String thisNode = v;
   		while (!thisNode.equals("null")) {
@@ -82,17 +86,11 @@ public class BFS {
   		return shortestPath;
   	}
   	
-//    public static boolean isConnected(WDGraph G,int source){
-//        int count = cc(G,source);
-//        if(count == 1){
-//            return true;
-//        }
-//        return false;
-//    }
+
 //
-//    public static boolean hasPathTo(int v){
-//        return marked[v];
-//    }
+    public static boolean hasPathTo(String stopName){
+        return marked.get(stopName);
+    }
 //
 //    public  static int disTo(int v){
 //        return distance[v];

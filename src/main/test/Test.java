@@ -24,6 +24,7 @@ public class Test {
 		g.addStop("6,f,0,0");
 		g.addStop("7,g,0,0");
 		g.addStop("8,h,0,0");
+		g.addStop("9,i,0,0");
 
 		g.addRoute("r1,1,2,3,4,1");
 		g.addRoute("r2,2,4");
@@ -32,17 +33,17 @@ public class Test {
 		g.addRoute("r5,6,8");
 
 
-		Clustering cluster = new Clustering(g);
-		cluster.reachMaxClusters(4);
-		cluster.deleteEdge();
+//		Clustering cluster = new Clustering(g);
+//		cluster.reachMaxClusters(4);
+//		cluster.deleteEdge();
 
-//		BFS b = new BFS();
-//		b.bfs(g, "Laurentina");
-//		System.out.println(b.getSP("Colosseo"));
+		BFS b = new BFS();
+		b.bfs(g, "a");
+		System.out.println(b.getSP("i"));
 		
-//		Dijkstra d = new Dijkstra();
-//		d.DijkstraSP(g, "Marconi");
-//		System.out.println(d.getSP("Cavour"));
+		Dijkstra d = new Dijkstra();
+		d.DijkstraSP(g, "a");
+		System.out.println(d.getSP("i"));
 	}
 	
 	public static void readStop(Graph g ) {

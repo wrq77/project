@@ -104,7 +104,7 @@ public class Clustering{
         }
     }
 
-
+    //Get all the shortest paths and path lengths from src to dst
     private void getAllSP(String src, String dst){
         shortestDistance = Double.MAX_VALUE;
         shortestPath = new ArrayList<>();
@@ -118,13 +118,13 @@ public class Clustering{
     }
 
 
-    //Get all the paths and path lengths from src to dst
+    //Get all the shortest paths and path lengths from src to dst
     private void getAllPath(double distanceBefore,Nodes lastNode, Stops src, Stops dst){
 
         Nodes n = lastNode;
         while (n.distance != 0){
             n = n.front;
-            //如果前面的点里已经有这个src了 就退出递归（If there is already this src in the previous point, exit the recursion）
+            //If there is already this src in the previous linkedList point, exit the recursion
             if(n.name.equals(src.getstopName())){
                 return;
             }
@@ -149,7 +149,7 @@ public class Clustering{
             if(srcNode.distance <= shortestDistance){
                 String onePath = "";
                 Nodes m = srcNode;
-                //倒着的一条路线(A backward route)
+                //A Reversed route
                 while (!m.name.equals("begin")){
                     onePath = onePath + m.name +",";
                     m = m.front;
