@@ -62,6 +62,10 @@ public class Dijkstra {
 
 	//get the shortest path to v
 	public static ArrayList<String> getSP(String v) {
+		if(!hasPathTo(v)){
+			System.out.println("there is no path to stop " + v);
+			return null;
+		}
 		ArrayList<String> shortestPath = new ArrayList<>();
 		String thisNode = v;
 		while (!thisNode.equals("null")) {
@@ -74,5 +78,9 @@ public class Dijkstra {
 		}
 		Collections.reverse(shortestPath);
 		return shortestPath;
+	}
+
+	public static boolean hasPathTo(String stopName){
+		return !previous.get(stopName).equals("null");
 	}
 }
