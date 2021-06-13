@@ -21,6 +21,10 @@ public class Clustering{
 
     // make the graph reach the requested maximum number of clusters.
     public void reachMaxClusters(int n){
+        if(n > g.getMyStops().size()){
+            System.out.println("Clusters can not be more than " + g.getMyStops().size() );
+            return;
+        }
         if(CountClusters() >= n){
             System.out.println("The graph already reached the requested maximum number of clusters");
             g.printGraph();

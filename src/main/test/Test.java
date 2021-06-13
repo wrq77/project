@@ -34,7 +34,7 @@ public class Test {
 
 
 		Clustering cluster = new Clustering(g);
-		cluster.reachMaxClusters(4);
+		cluster.reachMaxClusters(13);
 //		cluster.deleteEdge();
 
 //		BFS b = new BFS();
