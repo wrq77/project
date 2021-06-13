@@ -21,6 +21,10 @@ public class Clustering{
 
     // make the graph reach the requested maximum number of clusters.
     public void reachMaxClusters(int n){
+        if(n > g.getMyStops().size()){
+            System.out.println("Clusters can not be more than " + g.getMyStops().size() );
+            return;
+        }
         if(CountClusters() >= n){
             System.out.println("The graph already reached the requested maximum number of clusters");
             g.printGraph();
@@ -86,7 +90,7 @@ public class Clustering{
                     getAllSP(from.getstopName(),to.getstopName());
                     //if the shortest path exist
                     if(shortestDistance != Double.MAX_VALUE){
-                        double sum = 1.0/shortestPath.size();
+                        double sum = 0.5/shortestPath.size();
                         for (String path :shortestPath){
                             String[] nodes = path.split(",");
                             for(int i=0;i< nodes.length-1;i++){
