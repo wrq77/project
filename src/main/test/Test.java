@@ -34,12 +34,15 @@ public class Test {
 
 		Clustering cluster = new Clustering(g);
 		cluster.reachMaxClusters(4);
-//		cluster.deleteEdge();
+		cluster.deleteEdge();
 
-
+//		BFS b = new BFS();
+//		b.bfs(g, "Laurentina");
+//		System.out.println(b.getSP("Colosseo"));
+		
 //		Dijkstra d = new Dijkstra();
-//		d.DijkstraSP(g, "Laurentina");
-//		System.out.println(d.getSP("Colosseo"));
+//		d.DijkstraSP(g, "Marconi");
+//		System.out.println(d.getSP("Cavour"));
 	}
 	
 	public static void readStop(Graph g ) {
@@ -52,7 +55,6 @@ public class Test {
 					while ((line = br.readLine()) != null) {
 						g.addStop(line);
 					}
-//					g.printStopnode();	
 				} catch (IOException e) {
 					e.printStackTrace();
 				}finally {
@@ -79,6 +81,7 @@ public class Test {
 					g.addRoute(line);
 				}
 				//g.printGraph();
+				//g.printWGraph();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}finally {

@@ -10,7 +10,7 @@ public class Edges {
         this.routeId = routeId;
         this.src = src;
         this.dst = dst;
-        //如果坐标是(0,0), 设置距离是1
+        //If the coordinates are (0, 0), set the distance to 1
         if(src.getstopLat()==0 && dst.getstopLat()==0){
             distance = 1;
         }else{
