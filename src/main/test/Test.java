@@ -33,17 +33,17 @@ public class Test {
 		g.addRoute("r5,6,8");
 
 
-//		Clustering cluster = new Clustering(g);
-//		cluster.reachMaxClusters(4);
+		Clustering cluster = new Clustering(g);
+		cluster.reachMaxClusters(4);
 //		cluster.deleteEdge();
 
-		BFS b = new BFS();
-		b.bfs(g, "a");
-		System.out.println(b.getSP("i"));
-		
-		Dijkstra d = new Dijkstra();
-		d.DijkstraSP(g, "a");
-		System.out.println(d.getSP("i"));
+//		BFS b = new BFS();
+//		b.bfs(g, "a");
+//		System.out.println(b.getSP("i"));
+//
+//		Dijkstra d = new Dijkstra();
+//		d.DijkstraSP(g, "a");
+//		System.out.println(d.getSP("i"));
 	}
 	
 	public static void readStop(Graph g ) {
