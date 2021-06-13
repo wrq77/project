@@ -40,9 +40,9 @@ public class Clustering{
 
 
     public void deleteEdge(){
-        //计算每条边的betweenness
+        //Call the function to Calculate betweenness of each edge
         calAllBetweenness();
-        //遍历得到最大的betweenness
+        //Traverse to get the biggest betweenness
         String maxEdge = "";
         double maxbetweenness = -1;
         for(String name : betweenness.keySet()){
@@ -67,10 +67,10 @@ public class Clustering{
 
     }
 
-    //计算所有边的betweenness
+    //Calculate betweenness of each edge
     private void calAllBetweenness(){
 
-        //初始化每条边对应的HashMap
+        //Initialize the HashMap corresponding to each edge
         betweenness = new HashMap<>();
         for(List<Edges> eList : g.getMyGraph().values()){
             for(Edges e : eList){
@@ -84,7 +84,7 @@ public class Clustering{
                 if(!from.getstopName().equals(to.getstopName())){
 //                    System.out.println(from.getstopName()+"  to  "+to.getstopName());
                     getAllSP(from.getstopName(),to.getstopName());
-                    //如果存在最短路径
+                    //if the shortest path exist
                     if(shortestDistance != Double.MAX_VALUE){
                         double sum = 1.0/shortestPath.size();
                         for (String path :shortestPath){
@@ -118,13 +118,13 @@ public class Clustering{
     }
 
 
-    //得到所有src到dst的路径和路径长度
+    //Get all the paths and path lengths from src to dst
     private void getAllPath(double distanceBefore,Nodes lastNode, Stops src, Stops dst){
 
         Nodes n = lastNode;
         while (n.distance != 0){
             n = n.front;
-            //如果前面的点里已经有这个src了 就退出递归
+            //如果前面的点里已经有这个src了 就退出递归（If there is already this src in the previous point, exit the recursion）
             if(n.name.equals(src.getstopName())){
                 return;
             }
@@ -143,13 +143,13 @@ public class Clustering{
 
         lastNode.next.add(srcNode);
         srcNode.front = lastNode;
-        //如果是终点，退出递归
+        //If it is the dst node, exit the recursion
         if(src.getstopName().equals(dst.getstopName())){
-            //如果是最短路径的话
+            //If it is the shortest path
             if(srcNode.distance <= shortestDistance){
                 String onePath = "";
                 Nodes m = srcNode;
-                //倒着的一条路线
+                //倒着的一条路线(A backward route)
                 while (!m.name.equals("begin")){
                     onePath = onePath + m.name +",";
                     m = m.front;
@@ -168,7 +168,7 @@ public class Clustering{
 
     }
 
-    //链表
+    //Linked list
     private class Nodes {
         ArrayList<Nodes> next = new ArrayList<>();
         Nodes front;

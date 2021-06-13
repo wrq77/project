@@ -16,13 +16,7 @@ public class Dijkstra {
 
 
     public static List<String> DijkstraSP(Graph G, String name) {
-//    	String s;
-//    	for (String key : G.getfindStopsById().keySet()) {
-//    		if(name.equals(G.getfindStopsById().get(key))) {
-//    			s = key;
-//    			break;
-//    		}       
-//       }
+
 		sourceNode = name;
 
 		//store unvisited nodes

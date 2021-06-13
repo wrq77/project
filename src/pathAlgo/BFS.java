@@ -46,7 +46,7 @@ public class BFS {
         return visitOrder;
     }
 
-    //计算通量
+    //get the number of connected components
     public static int cc(Graph G) {
         for (Stops s : G.getMyStops().values()){
             String source = s.getstopName();
@@ -65,6 +65,23 @@ public class BFS {
 
         return count;
     }
+    
+  //get the shortest path to v
+  	public static ArrayList<String> getSP(String v) {
+  		ArrayList<String> shortestPath = new ArrayList<>();
+  		String thisNode = v;
+  		while (!thisNode.equals("null")) {
+  			shortestPath.add(thisNode);
+  			thisNode = previous.get(thisNode);
+  			if (thisNode == sourceNode) {
+  				shortestPath.add(sourceNode);
+  				break;
+  			}
+  		}
+  		Collections.reverse(shortestPath);
+  		return shortestPath;
+  	}
+  	
 //    public static boolean isConnected(WDGraph G,int source){
 //        int count = cc(G,source);
 //        if(count == 1){

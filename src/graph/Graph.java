@@ -5,18 +5,18 @@ import graph.Edges;
 import java.util.*;
 
 public class Graph {
-    //站点name为key值，站点
+    //set the key to the name of the stop -> stop
     private HashMap<String, Stops> myStops = new HashMap<String, Stops>();
-    //站点id为key值，站点name
+    //set the key to the id of the stop -> stop name
     private HashMap<String, String> findStopsById = new HashMap<String, String>();
-    //站点name为key
+    //set the key to the name of the stop
     private HashMap<String, List<Edges>> myGraph = new HashMap<String, List<Edges>>();
 
     public Graph(){
 
     }
 
-    //读取每行 myStops.txt 文件添加Stops
+    //read every line of myStops.txt to add Stops
     public void addStop(String line){
         String[] stopInfo = line.split(",");
         myStops.put(stopInfo[1], new Stops(stopInfo[0], stopInfo[1], Double.valueOf(stopInfo[2]), Double.valueOf(stopInfo[3])));
@@ -33,20 +33,26 @@ public class Graph {
             myGraph.get(findStopsById.get(stopsOfRoute[i+1])).add(edge2);
         }
     }
-
-//    public void printStopnode() {
-//    	System.out.println("The number of stops: "+findStopsById.size());
-//    	for (String key : findStopsById.keySet()) {
-//            System.out.println(key+": "+findStopsById.get(key));          
-//         }
-//    }
     
-    //print graph
+    //print unweighed graph
     public void printGraph() {
+//    	System.out.println("The number of stops: "+myGraph.size());
     	for (String key : myGraph.keySet()) {
           System.out.print(key+": ");
           for (Edges e : myGraph.get(key)){
               System.out.print(e.getDst().getstopName() + " ");
+          }
+          System.out.println();
+       }
+    }
+    
+    //print weighed graph
+    public void printWGraph() {
+//    	System.out.println("The number of stops: "+myGraph.size());
+    	for (String key : myGraph.keySet()) {
+          System.out.print(key+": ");
+          for (Edges e : myGraph.get(key)){
+              System.out.print("("+e.getDst().getstopName() + ", "+e.getdistance() + ") ");
           }
           System.out.println();
        }
