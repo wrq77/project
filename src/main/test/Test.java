@@ -45,10 +45,10 @@ public class Test {
 //		System.out.println(b.getSP("i"));
 
 		Dijkstra d = new Dijkstra();
-		d.DijkstraSP(g, "Laurentina/Torretta Vallerano");
+		d.DijkstraSP(g, "Colombo/Civilta' Del Lavoro");
 //		System.out.println(d.getSP("Tuscolana/Appio Claudio"));
 
-		DrawGraph dw = new DrawGraph(g, d.getSP("Tuscolana/Appio Claudio"));
+		DrawGraph dw = new DrawGraph(g, d.getSP("Aspertini/Conti F."));
 
 	}
 	
