@@ -18,7 +18,7 @@ public class Test {
 		readRoute(g);
 
 //		System.out.println(g.minLat+","+g.maxLat);
-//		g.addStop("1,a,0,0");
+		g.addStop("1,a,41.827234,12.480657");
 //		g.addStop("2,b,1,0");
 //		g.addStop("3,c,0,1");
 //		g.addStop("4,d,1,1");
@@ -49,6 +49,7 @@ public class Test {
 //		System.out.println(d.getSP("Tuscolana/Appio Claudio"));
 
 		DrawGraph dw = new DrawGraph(g, d.getSP("Aspertini/Conti F."));
+//		DrawGraph dw = new DrawGraph(g, d.getSP("a"));
 
 	}
 	
