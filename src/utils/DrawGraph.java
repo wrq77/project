@@ -44,14 +44,19 @@ class NewPanel extends JPanel{
     }
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
+        g.setColor(Color.darkGray);
         for(List<Edges> eList : graph.getMyGraph().values()){
             for(Edges e : eList){
                 int xLat = transPosition(e.getSrc().getstopLat(), graph.maxLat, graph.minLat, width);
                 int xLon = transPosition(e.getSrc().getstopLon(), graph.maxLon, graph.minLon, height);
                 int yLat = transPosition(e.getDst().getstopLat(), graph.maxLat, graph.minLat, width);
                 int yLon = transPosition(e.getDst().getstopLon(), graph.maxLon, graph.minLon, height);
-
                 g.drawLine(xLat, xLon, yLat, yLon);
+//                if(e.getrouteId().split("ME").length>1){
+//                    g.setColor(Color.cyan);
+//                }else{
+//                    g.setColor(Color.black);
+//                }
             }
 
         }
