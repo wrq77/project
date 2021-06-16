@@ -17,7 +17,7 @@ public class Test {
 		readStop(g);
 		readRoute(g);
 
-		System.out.println(g.minLat+","+g.maxLat);
+//		System.out.println(g.minLat+","+g.maxLat);
 //		g.addStop("1,a,0,0");
 //		g.addStop("2,b,1,0");
 //		g.addStop("3,c,0,1");
@@ -43,10 +43,11 @@ public class Test {
 //		BFS b = new BFS();
 //		b.bfs(g, "a");
 //		System.out.println(b.getSP("i"));
-//
+
 		Dijkstra d = new Dijkstra();
 		d.DijkstraSP(g, "Laurentina/Torretta Vallerano");
-		System.out.println(d.getSP("Tuscolana/Appio Claudio"));
+//		System.out.println(d.getSP("Tuscolana/Appio Claudio"));
+
 		DrawGraph dw = new DrawGraph(g, d.getSP("Tuscolana/Appio Claudio"));
 
 	}
