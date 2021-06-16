@@ -12,6 +12,11 @@ public class Graph {
     //set the key to the name of the stop
     private HashMap<String, List<Edges>> myGraph = new HashMap<String, List<Edges>>();
 
+    public double minLat = Double.MAX_VALUE;
+    public double maxLat = Double.MIN_VALUE;
+    public double minLon = Double.MAX_VALUE;
+    public double maxLon = Double.MIN_VALUE;
+
     public Graph(){
 
     }
@@ -22,6 +27,11 @@ public class Graph {
         myStops.put(stopInfo[1], new Stops(stopInfo[0], stopInfo[1], Double.valueOf(stopInfo[2]), Double.valueOf(stopInfo[3])));
         findStopsById.put(stopInfo[0], stopInfo[1]);
         myGraph.put(stopInfo[1], new ArrayList<>());
+        this.minLat = Math.min(this.minLat, Double.parseDouble(stopInfo[2]));
+        this.maxLat = Math.max(this.maxLat, Double.parseDouble(stopInfo[2]));
+        this.minLon = Math.min(this.minLon, Double.parseDouble(stopInfo[3]));
+        this.maxLon = Math.max(this.maxLon, Double.parseDouble(stopInfo[3]));
+
     }
 
     public void addRoute(String route){
