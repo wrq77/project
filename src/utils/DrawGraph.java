@@ -2,12 +2,7 @@ package utils;
 
 import graph.*;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
+import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -59,6 +54,9 @@ class NewPanel extends JPanel{
 //                }
             }
 
+        }
+        if(SP == null){
+            return;
         }
         for(int i=0; i<SP.size()-1; i++){
             int xLat = transPosition(graph.getMyStops().get(SP.get(i)).getstopLat(), graph.maxLat, graph.minLat, width);

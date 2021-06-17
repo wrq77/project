@@ -165,7 +165,11 @@ public class Clustering{
                 shortestPath.add(onePath);
             }
             return;
+        }else if (srcNode.distance >= shortestDistance){
+            //if the distance of the current uncompleted path is more than shortestDistance, return
+            return;
         }
+
         for (Edges e : g.getMyGraph().get(src.getstopName())){
             getAllPath(srcNode.distance, srcNode, e.getDst(), dst);
         }
