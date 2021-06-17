@@ -166,6 +166,9 @@ public class Clustering{
             }
             return;
         }
+        if(srcNode.distance > shortestDistance){
+            return;
+        }
         for (Edges e : g.getMyGraph().get(src.getstopName())){
             getAllPath(srcNode.distance, srcNode, e.getDst(), dst);
         }
